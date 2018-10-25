@@ -1,0 +1,33 @@
+{
+    "author": "Isaac J. Lee",
+    "name": "central-austin-education-backend",
+    "version": "1.0.0",
+    "description": "Ember-Express app to track education progress at Central Austin Toastmasters",
+    "keywords": [],
+    "private": true,
+    "license": "UNLICENSED",
+    "homepage": "https://github.com/ijlee2/central-austin-education#readme",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "concurrently \"nodemon server.js\" \"cd frontend && ember server --proxy=http://localhost:3000\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ijlee2/central-austin-education.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ijlee2/central-austin-education/issues"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "concurrently": "^4.0.1",
+        "cors": "^2.8.4",
+        "express": "^4.16.4",
+        "request": "^2.88.0",
+        "sequelize": "^4.41.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
+}
