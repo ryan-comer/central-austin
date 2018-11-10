@@ -2,7 +2,7 @@
     "author": "Isaac J. Lee",
     "name": "central-austin-education-backend",
     "version": "1.0.0",
-    "description": "Ember-Express app to track education progress at Central Austin Toastmasters",
+    "description": "Ember-Express app to track member progress at Central Austin Toastmasters",
     "keywords": [],
     "private": true,
     "license": "UNLICENSED",
