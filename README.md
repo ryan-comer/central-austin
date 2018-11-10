@@ -15,12 +15,21 @@
 - [Jessica Sung](https://www.linkedin.com/in/jessicasung/)
 - [Xiaochuan Xu](https://www.linkedin.com/in/xiaochuan-xu-45b91a40/)
 
+
 ## Technologies Used
 
 - [x] Ember, Sass, D3
-- [x] Node, Express, SQL
-- [x] Google Sheets API
+- [x] Node, Express, PostGres
+- [x] QUnit, Google Sheets API
+
 
 ## Sketches
 
+
 ## Resources
+
+- [My Progress (View)](https://github.com/ijlee2/central-austin-education/blob/master/readme/A1.png?raw=true)
+- [My Progress (Edit)](https://github.com/ijlee2/central-austin-education/blob/master/readme/B1.png?raw=true)
+- [My Club (List All)](https://github.com/ijlee2/central-austin-education/blob/master/readme/C1.png?raw=true)
+- [My Club (Group by Level)](https://github.com/ijlee2/central-austin-education/blob/master/readme/C2.png?raw=true)
+- [My Club (Group by Path)](https://github.com/ijlee2/central-austin-education/blob/master/readme/C3.png?raw=true)
