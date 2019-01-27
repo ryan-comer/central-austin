@@ -1,4 +1,8 @@
-export default function(/* server */) {
+import createScenarios_path from './path';
+
+export default function( server ) {
+
+    createScenarios_path(server);
 
   /*
     Seed your development database using your factories.
