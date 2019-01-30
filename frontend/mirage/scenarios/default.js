@@ -1,12 +1,9 @@
 import createScenarios_path from './path';
 
-export default function (server) {
-  // Create Pathways paths
-  createScenarios_path(server);
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
-  */
+export default function(server) {
+    // Create members
+    server.createList('member', 30);
 
-  server.createList('member', 30);
+    // Create Pathways paths
+    createScenarios_path(server);
 }
