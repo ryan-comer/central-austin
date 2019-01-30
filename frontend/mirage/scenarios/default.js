@@ -1,9 +1,9 @@
-export default function(/* server */) {
+import createScenarios_path from './path';
 
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
-  */
+export default function(server) {
+    // Create members
+    server.createList('member', 30);
 
-  // server.createList('post', 10);
+    // Create Pathways paths
+    createScenarios_path(server);
 }

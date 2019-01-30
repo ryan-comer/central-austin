@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
     let ENV = {
-        modulePrefix: 'frontend',
+        modulePrefix: 'central-austin-toastmasters-frontend',
         environment,
         rootURL: '/',
         locationType: 'auto',

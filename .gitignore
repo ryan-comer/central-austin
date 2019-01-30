@@ -22,6 +22,7 @@
 /frontend/npm-debug.log*
 /frontend/yarn-error.log
 /frontend/testem.log
+.DS_Store
 
 # ember-try
 /frontend/.node_modules.ember-try/
