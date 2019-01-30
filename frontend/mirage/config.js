@@ -1,4 +1,4 @@
-export default function () {
+export default function() {
     // These comments are here to help you get started. Feel free to delete them.
     /*
         Config (with defaults).
@@ -20,6 +20,10 @@ export default function () {
         this.del('/posts/:id');
 
         http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
+    */
+
+    /*
+        Member model
     */
     this.get('/members');
 }
