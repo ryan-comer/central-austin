@@ -12,3 +12,6 @@ title_visit_my_club: Visit My Club
 # Prepend keys with custom, if the user (admin) will be allowed to
 # customize the values
 custom_club_name: Central Austin Toastmasters
+
+# Just for testing
+label_how_did_i_get_here: How did I get here?
