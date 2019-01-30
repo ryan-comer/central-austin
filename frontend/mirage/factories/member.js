@@ -14,7 +14,14 @@ export default Factory.extend({
     return faker.phone.phoneNumber();
   },
   toastmastersId() {
-    return faker.random.uuid();
+    const numDigits = 8;
+    let toastmastersId = Math.floor((10 ** numDigits) * Math.random());
+
+    // Pad zeroes to the beginning
+    const numPads = numDigits - toastmastersId.toString().length;
+    toastmastersId = `${'0'.repeat(numPads)}${toastmastersId}`;
+
+    return toastmastersId;
   },
   membershipStartDate() {
     return faker.date.past();
