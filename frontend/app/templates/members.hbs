@@ -1,1 +1,22 @@
 {{t "label_how_did_i_get_here"}}
+
+<table>
+    <thead>
+        <th>
+            <td>{{t "label_name"}}</td>
+            <td>{{t "label_paths"}}</td>
+            <td>{{t "label_email"}}</td>
+            <td>{{t "label_phone"}}</td>
+        </th>
+    </thead>
+    <tbody>
+        {{#each model as |member|}}
+        <tr>
+            <td>{{member.fullName}}</td>
+            <td></td>
+            <td>{{member.email}}</td>
+            <td>{{member.phone}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
