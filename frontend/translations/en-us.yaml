@@ -3,6 +3,10 @@
 label_welcome_message: Welcome to {clubName}!
 label_home: Home
 label_my_club: My Club
+label_name: Name
+label_paths: Paths
+label_email: Email
+label_phone: Phone
 
 # Prepened keys with title, if the text is meaat to be used for the
 # title attribute for accessibility
