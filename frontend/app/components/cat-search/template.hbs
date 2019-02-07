@@ -1,3 +1,10 @@
 <div class="layout">
-  {{paper-input class="flex" label="Search" type="search" value=this.query onChange=(action (mut this.query)) onBlur=(action "onQueryChange")}}
+    {{paper-input
+        class="flex"
+        label="Search"
+        type="search"
+        value=this.query
+        onChange=(action (mut this.query))
+        onBlur=(action "onQueryChange")
+    }}
 </div>

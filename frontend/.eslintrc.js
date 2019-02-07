@@ -92,10 +92,10 @@ module.exports = {
         ],
         'no-tabs': ['error'],
         'no-trailing-spaces': [
-            'error'
+            'error',
         ],
         'no-var': [
-            'error'
+            'error',
         ],
         'object-curly-spacing': [
             'error',
