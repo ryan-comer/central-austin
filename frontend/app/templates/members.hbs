@@ -1,2 +1,5 @@
 {{t "label_how_did_i_get_here"}}
-{{#cat-search}}{{/cat-search}}
+{{#cat-search
+    query=query
+    onBlur=(action "onQueryChange")
+}}{{/cat-search}}
