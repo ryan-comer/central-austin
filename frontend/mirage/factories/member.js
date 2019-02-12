@@ -1,6 +1,11 @@
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
+    /*************************************************************************************
+
+        Personal information
+
+    *************************************************************************************/
     firstName() {
         return faker.name.firstName();
     },
@@ -17,6 +22,12 @@ export default Factory.extend({
         return faker.phone.phoneNumber();
     },
 
+
+    /*************************************************************************************
+
+        Toastmasters International information
+
+    *************************************************************************************/
     toastmastersId() {
         // Create an 8-digit number with leading zeroes
         const numDigits = 8;
@@ -35,5 +46,51 @@ export default Factory.extend({
 
     membershipEndDate() {
         return faker.date.future();
+    },
+
+
+    /*************************************************************************************
+
+        Model relationships
+
+    *************************************************************************************/
+    afterCreate(member, server) {
+        const availablePathIds = server.db.paths.mapBy('id');
+
+        // We assume that a member is working on 0 (10%), 1 (65%), 2 (20%), or 3 (5%) paths
+        // according to the probability distribution above
+        const randomInteger = Math.floor(100 * Math.random());
+        let numPathsSelected;
+
+        if (randomInteger < 10) {
+            numPathsSelected = 0;
+
+        } else if (randomInteger < 75) {
+            numPathsSelected = 1;
+
+        } else if (randomInteger < 95) {
+            numPathsSelected = 2;
+
+        } else {
+            numPathsSelected = 3;
+
+        }
+
+        // Assign paths to the member
+        const pathIds = [];
+
+        while (pathIds.length < numPathsSelected) {
+            const index = Math.floor(availablePathIds.length * Math.random());
+            const pathId = availablePathIds[index];
+
+            if (!pathIds.includes(pathId)) {
+                pathIds.push(pathId);
+            }
+        }
+
+        member.pathIds = pathIds;
+
+        // Save paths information
+        member.save();
     },
 });
