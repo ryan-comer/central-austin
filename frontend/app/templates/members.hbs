@@ -1,5 +1,10 @@
 {{t "label_how_did_i_get_here"}}
 
+{{cat-search
+    query=query
+    onBlur=(action "onQueryChange" bubbles=false)
+}}
+
 <table>
     <thead>
         <th>
@@ -11,12 +16,12 @@
     </thead>
     <tbody>
         {{#each model as |member|}}
-        <tr>
-            <td>{{member.fullName}}</td>
-            <td></td>
-            <td>{{member.email}}</td>
-            <td>{{member.phone}}</td>
-        </tr>
+            <tr>
+                <td>{{member.fullName}}</td>
+                <td></td>
+                <td>{{member.email}}</td>
+                <td>{{member.phone}}</td>
+            </tr>
         {{/each}}
     </tbody>
 </table>
