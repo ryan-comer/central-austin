@@ -1,19 +1,19 @@
-<table>
+<table data-test-table>
     <thead>
         <tr>
-            <th>{{t "label_name"}}</th>
-            <th>{{t "label_paths"}}</th>
-            <th>{{t "label_email"}}</th>
-            <th>{{t "label_phone"}}</th>
+            <th data-test-header>{{t "label_name"}}</th>
+            <th data-test-header>{{t "label_paths"}}</th>
+            <th data-test-header>{{t "label_email"}}</th>
+            <th data-test-header>{{t "label_phone"}}</th>
         </tr>
     </thead>
     <tbody>
         {{#each model as |member|}}
-            <tr>
-                <td>{{member.fullName}}</td>
-                <td></td>
-                <td>{{member.email}}</td>
-                <td>{{member.phone}}</td>
+            <tr data-test-row>
+                <td data-test-column="Name">{{member.fullName}}</td>
+                <td data-test-column="Paths"></td>
+                <td data-test-column="Email">{{member.email}}</td>
+                <td data-test-column="Phone">{{member.phone}}</td>
             </tr>
         {{/each}}
     </tbody>
