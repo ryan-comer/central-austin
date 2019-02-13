@@ -1,11 +1,25 @@
-<header>
-    <h1>{{t "test_message"}}</h1>
+<header class="cat-header">
+    <h1>
+        {{t "label_welcome_message" clubName=(t "custom_club_name")}}
+    </h1>
 </header>
 
-<nav>
+<nav class="cat-nav">
+    <ul>
+        <li>
+            {{#link-to "index" title=(t "title_visit_home")}}
+                {{t "label_home"}}
+            {{/link-to}}
+        </li>
+        <li>
+            {{#link-to "members" title=(t "title_visit_my_club")}}
+                {{t "label_my_club"}}
+            {{/link-to}}
+        </li>
+    </ul>
 </nav>
 
 {{outlet}}
 
-<footer>
+<footer class="cat-footer">
 </footer>

@@ -9,7 +9,10 @@ module.exports = function(defaults) {
             testGenerator: 'qunit', // or 'mocha', etc.
         },
 
-        hinting: EmberApp.env() === 'production',
+        // Setting hinting to true allows template and JS linting at
+        // runtime. If this makes the initial load time too long, we
+        // can write `EmberApp.env() === 'production',` instead.
+        hinting: true,
     });
 
     // Use `app.import` to add additional libraries to the generated

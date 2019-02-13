@@ -1,1 +1,21 @@
-test_message: ¡Hola mundo!
+# Prepend keys with label, if the text is meant to be displayed on
+# the screen
+label_welcome_message: Welcome to {clubName}!
+label_home: Home
+label_my_club: My Club
+label_name: Name
+label_paths: Paths
+label_email: Email
+label_phone: Phone
+
+# Prepened keys with title, if the text is meaat to be used for the
+# title attribute for accessibility
+title_visit_home: Visit Home
+title_visit_my_club: Visit My Club
+
+# Prepend keys with custom, if the user (admin) will be allowed to
+# customize the values
+custom_club_name: Central Austin Toastmasters
+
+# Just for testing
+label_how_did_i_get_here: How did I get here?
