@@ -2,7 +2,6 @@
 
 ## Team Members
 
-- [Néstor Castro](https://www.linkedin.com/in/n%C3%A9stor-aar%C3%B3n-castro-ibarra-29308699/)
 - [Ryan Comer](https://www.linkedin.com/in/ryan-comer-a7579411b/)
 - [Taylor Courtney](https://www.linkedin.com/in/taylor-courtney-3aa96165/)
 - [Shreya Gupta](https://www.linkedin.com/in/shreyagupta995/)
@@ -11,7 +10,6 @@
 - [Isaac Lee](https://www.linkedin.com/in/ijlee2)
 - [Newton Liu](https://www.linkedin.com/in/newtonliu/)
 - [Fahad Memon](https://www.linkedin.com/in/fahad-memon-917bb863/)
-- [Pierce Morrill](https://www.linkedin.com/in/pierce-morrill/)
 - [Jessica Sung](https://www.linkedin.com/in/jessicasung/)
 - [Xiaochuan Xu](https://www.linkedin.com/in/xiaochuan-xu-45b91a40/)
 
@@ -20,13 +18,25 @@
 
 - [x] Ember, Sass, D3
 - [x] Node, Express, PostGres
-- [x] QUnit, Google Sheets API
+- [x] QUnit, QUnit DOM, Google Sheets API
+
+
+## Documentations
+
+### Developing in Ember
+- [Ember](https://guides.emberjs.com/release/)
+- [Ember Paper](http://miguelcobain.github.io/ember-paper/)
+- [Sass](https://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+
+### Testing in Ember
+- [Ember CLI Mirage](https://www.ember-cli-mirage.com/)
+- [Ember Exam](https://github.com/ember-cli/ember-exam/blob/master/README.md)
+- [Ember Test Selectors](https://github.com/simplabs/ember-test-selectors/blob/master/README.md)
+- [QUnit](https://api.qunitjs.com/)
+- [QUnit DOM](https://github.com/simplabs/qunit-dom/blob/master/API.md)
 
 
 ## Sketches
-
-
-## Resources
 
 - [My Progress (View)](https://github.com/ijlee2/central-austin-education/blob/master/readme/A1.png?raw=true)
 - [My Progress (Edit)](https://github.com/ijlee2/central-austin-education/blob/master/readme/B1.png?raw=true)
