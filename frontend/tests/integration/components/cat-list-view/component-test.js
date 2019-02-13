@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | cat-search', function(hooks) {
+module('Integration | Component | cat-list-view', function(hooks) {
     setupRenderingTest(hooks);
 
     test('it renders', async function(assert) {
         // Set any properties with this.set('myProperty', 'value');
         // Handle any actions with this.set('myAction', function(val) { ... });
 
-        await render(hbs`{{cat-search}}`);
+        await render(hbs`{{cat-list-view}}`);
 
         assert.equal(this.element.textContent.trim(), '');
 
         // Template block usage:
         await render(hbs`
-            {{#cat-search}}
+            {{#cat-list-view}}
                 template block text
-            {{/cat-search}}
+            {{/cat-list-view}}
         `);
 
         assert.equal(this.element.textContent.trim(), 'template block text');
