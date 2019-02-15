@@ -8,4 +8,10 @@ export default Route.extend({
             paths: this.store.findAll('path'),
         });
     },
+
+    setupController(controller, model){
+        this._super(controller, model);
+        // Start with everything
+        this.controller.set('filteredModel', model);
+    },
 });
