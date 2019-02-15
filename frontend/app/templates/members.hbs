@@ -2,9 +2,11 @@
 
 {{cat-search
     query=query
-    onBlur=(action "onQueryChange" bubbles=false)
+    onQueryChange=(action "onQueryChange" bubbles=false)
+    data-test-members-search=0
 }}
 
 {{cat-list-view
-    members=model.members
+    model=filteredModel
+    data-test-members-list=0
 }}
