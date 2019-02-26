@@ -15,11 +15,13 @@ export default Factory.extend({
     },
 
     email() {
-        return faker.internet.email();
+        // Derive the username from the member's first and last names
+        return faker.internet.email(this.firstName, this.lastName);
     },
 
     phone() {
-        return faker.phone.phoneNumber();
+        // Create a phone number (xxx) xxx-xxxx
+        return faker.phone.phoneNumberFormat(1);
     },
 
 

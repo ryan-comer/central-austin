@@ -1,31 +1,31 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
 
 module('Integration | Component | cat-list-view', function(hooks) {
     setupRenderingTest(hooks);
 
     test('We see the table correctly', async function(assert) {
         // Create mock data (we can use Mirage instead)
-        this.set('model', [
+        this.set('members', [
             {
                 fullName: 'Ryan Comer',
-                paths: 'Innovative Planning',
                 email: 'r.comer@example.com',
-                phone: '512-123-4567',
+                phone: '(512) 123-4567',
+                listOfPaths: 'Engaging Humor, Innovative Planning',
             },
             {
                 fullName: 'Jessica Sung',
-                paths: 'Presentation Mastery',
                 email: 'j.sung@example.com',
-                phone: '512-234-5678',
+                phone: '(512) 234-5678',
+                listOfPaths: 'Presentation Mastery',
             },
         ]);
 
         // Render the component
         await render(hbs`{{cat-list-view
-            model=model
+            members=members
         }}`);
 
         assert.dom('[data-test-table]').exists('We see 1 table.');
@@ -82,7 +82,7 @@ module('Integration | Component | cat-list-view', function(hooks) {
 
         assert.strictEqual(
             tableRows[0].querySelector('[data-test-column="Paths"]').textContent.trim(),
-            '',
+            'Engaging Humor, Innovative Planning',
             'We see the 1st person\'s paths.'
         );
 
@@ -94,8 +94,32 @@ module('Integration | Component | cat-list-view', function(hooks) {
 
         assert.strictEqual(
             tableRows[0].querySelector('[data-test-column="Phone"]').textContent.trim(),
-            '512-123-4567',
+            '(512) 123-4567',
             'We see the 1st person\'s phone.'
+        );
+
+        assert.strictEqual(
+            tableRows[1].querySelector('[data-test-column="Name"]').textContent.trim(),
+            'Jessica Sung',
+            'We see the 2nd person\'s full name.'
+        );
+
+        assert.strictEqual(
+            tableRows[1].querySelector('[data-test-column="Paths"]').textContent.trim(),
+            'Presentation Mastery',
+            'We see the 2nd person\'s paths.'
+        );
+
+        assert.strictEqual(
+            tableRows[1].querySelector('[data-test-column="Email"]').textContent.trim(),
+            'j.sung@example.com',
+            'We see the 2nd person\'s email.'
+        );
+
+        assert.strictEqual(
+            tableRows[1].querySelector('[data-test-column="Phone"]').textContent.trim(),
+            '(512) 234-5678',
+            'We see the 2nd person\'s phone.'
         );
 
         /*
@@ -107,13 +131,26 @@ module('Integration | Component | cat-list-view', function(hooks) {
         assert.dom('[data-test-column="Name"]', tableRows[0])
             .hasText('Ryan Comer', 'We see the 1st person\'s full name.');
 
-        assert.dom('[data-test-column="Paths"]', tableRows[1])
-            .hasText('', 'We see the 1st person\'s paths.');
+        assert.dom('[data-test-column="Paths"]', tableRows[0])
+            .hasText('Engaging Humor, Innovative Planning', 'We see the 1st person\'s paths.');
 
-        assert.dom('[data-test-column="Email"]', tableRows[2])
+        assert.dom('[data-test-column="Email"]', tableRows[0])
             .hasText('r.comer@example.com', 'We see the 1st person\'s email.');
 
-        assert.dom('[data-test-column="Phone"]', tableRows[3])
-            .hasText('512-123-4567', 'We see the 1st person\'s phone.');
+        assert.dom('[data-test-column="Phone"]', tableRows[0])
+            .hasText('(512) 123-4567', 'We see the 1st person\'s phone.');
+
+
+        assert.dom('[data-test-column="Name"]', tableRows[1])
+            .hasText('Jessica Sung', 'We see the 2nd person\'s full name.');
+
+        assert.dom('[data-test-column="Paths"]', tableRows[1])
+            .hasText('Presentation Mastery', 'We see the 2nd person\'s paths.');
+
+        assert.dom('[data-test-column="Email"]', tableRows[1])
+            .hasText('j.sung@example.com', 'We see the 2nd person\'s email.');
+
+        assert.dom('[data-test-column="Phone"]', tableRows[1])
+            .hasText('(512) 234-5678', 'We see the 2nd person\'s phone.');
     });
 });

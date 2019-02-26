@@ -52,4 +52,17 @@ export default DS.Model.extend({
 
         return `${firstInitial}${lastInitial}`;
     }),
+
+    listOfPaths: computed('paths.@each.name', function() {
+        const pathNames = this.get('paths').mapBy('name')
+            .sort((a, b) => {
+                const value1 = (a || '').toLowerCase();
+                const value2 = (b || '').toLowerCase();
+
+                if (value1 > value2) return 1;
+                if (value1 < value2) return -1;
+                return 0;
+            });
+        return pathNames.join(', ');
+    }),
 });
