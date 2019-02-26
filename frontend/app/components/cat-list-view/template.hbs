@@ -8,10 +8,10 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |member|}}
+        {{#each members as |member|}}
             <tr data-test-row>
                 <td data-test-column="Name">{{member.fullName}}</td>
-                <td data-test-column="Paths"></td>
+                <td data-test-column="Paths">{{member.listOfPaths}}</td>
                 <td data-test-column="Email">{{member.email}}</td>
                 <td data-test-column="Phone">{{member.phone}}</td>
             </tr>
