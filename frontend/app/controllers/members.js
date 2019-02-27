@@ -1,35 +1,27 @@
 import Controller from '@ember/controller';
 import {run} from '@ember/runloop';
+import {computed} from '@ember/object';
 
 export default Controller.extend({
-    updateWaitTime: 1000,   // Time to wait before updating table
     query: '',
 
-    actions: {
-        onQueryChange() {
-            this.set('keyPressed', true);
-            this.set('pressedTime', new Date());
+    // Member list that's actually displayed in the table
+    filteredMembers: computed('model.@each.fullName', 'query', function(){
+        const query = (this.query || '').trim().toLowerCase();
 
-            // Wait until the user stops typing
-            run.later(this, function(){
-                var currentTime = new Date();
+        return this.model.filter(member => {
+            const fullName = member.fullName.replace(/ /g, '');
 
-                // Check that it's been long enough
-                var elapsedTime = currentTime - this.get('pressedTime');
-                if(elapsedTime >= this.updateWaitTime){
-                    this.filterTable(this.query);
-                }
-            }, this.updateWaitTime);
-        },
+            return fullName.toLowerCase().includes(query);
+        }).sortBy('fullName');
+    }),
+
+    init(){
+        this._super(...arguments);
+
+        this.setProperties({
+            query: '',
+        })
     },
 
-    // Filter the table based on the query
-    filterTable(){
-        const query = this.query.trim().toLowerCase() || '';
-        // Update filtered model
-        this.set('filteredModel', this.model.filter(member => {
-            // Filter by name
-            return member.firstName.toLowerCase().includes(query);
-        }));
-    },
 });
