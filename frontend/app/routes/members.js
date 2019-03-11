@@ -8,4 +8,9 @@ export default Route.extend({
             paths: this.store.findAll('path'),
         });
     },
+
+    setupController(controller, model){
+        this._super(...arguments);
+        controller.set('query', '');
+    },
 });
