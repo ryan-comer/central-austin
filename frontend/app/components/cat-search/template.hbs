@@ -1,10 +1,17 @@
 <div class="layout">
-    {{paper-input
+    <!--{{paper-input
+        data-test-members-search
         class="flex"
         label="Search"
         type="search"
         value=this.query
         onChange=(action (mut this.query))
         onKeyDown=onQueryChange
+    }}-->
+    {{input
+        data-test-members-search
+        type="text"
+        value=this.query
+        key-press=onQueryChange
     }}
 </div>
